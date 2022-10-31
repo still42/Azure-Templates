@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vm-adds-username": {
+            "value": "GENERATE_USERNAME"
+        },
+        "vm-adds-password": {
+            "value": "GENERATE_PASSWORD"
+        },
+        "vm-client-01-username": {
+            "value": "GENERATE_USERNAME"
+        },
+        "vm-client-01-password": {
+            "value": "GENERATE_PASSWORD"
+        },
+        "vm-client-02-username": {
+            "value": "GENERATE_USERNAME"
+        },
+        "vm-client-02-password": {
+            "value": "GENERATE_PASSWORD"
+        },
+        "vm-client-management-username": {
+            "value": "GENERATE_USERNAME"
+        },
+        "vm-client-management-password": {
+            "value": "GENERATE_PASSWORD"
+        }
+    }
+}

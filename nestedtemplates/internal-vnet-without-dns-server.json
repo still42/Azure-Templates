@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnet-intern": {
+            "type": "string",
+            "defaultValue": "vnet-intern"
+        },
+        "snet-intern-server": {
+            "type": "string",
+            "defaultValue": "snet-intern-server"
+        },
+        "snet-intern-clients": {
+            "type": "string",
+            "defaultValue": "snet-intern-clients"
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('vnet-intern')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2019-11-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[parameters('snet-intern-server')]",
+                        "properties": {
+                            "addressPrefix": "10.0.10.0/24"
+                        }
+                    },
+                    {
+                        "name": "[parameters('snet-intern-clients')]",
+                        "properties": {
+                            "addressPrefix": "10.0.20.0/24"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}
